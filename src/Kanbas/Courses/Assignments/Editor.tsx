@@ -95,7 +95,7 @@ export default function AssignmentEditor() {
             </tr>
       </table>
       <hr />
-      <div id="wd-submit-buttons" align="right">
+      <div id="wd-submit-buttons">
         <button>Cancel</button>
         <button>Save</button>
       </div>

@@ -12,24 +12,6 @@ export default function Signup() {
     dispatch(setCurrentUser(currentUser));
     navigate("/Kanbas/Account/Profile");
   };
-//   return (
-//     <div className="wd-signup-screen">
-//       <h1>Sign up</h1>
-//       <input id="wd-username"
-//              placeholder="username"
-//              className="form-control mb-2"/>
-//       <input id="wd-password"
-//              placeholder="password" type="password"
-//              className="form-control mb-2"/>
-//       <input id="wd-verify-password"
-//              placeholder="verify password" type="password"
-//              className="form-control mb-2"/>
-//       <Link id="wd-signup-btn"
-//             to="/Kanbas/Account/Profile"
-//             className="btn btn-primary w-100">
-//             Sign up </Link>
-//       <Link id="wd-signin-link" to="/Kanbas/Account/Signin" >Sign in</Link>
-
       return (
     <div className="wd-signup-screen">
       <h1>Sign up</h1>
@@ -41,6 +23,3 @@ export default function Signup() {
       <Link to="/Kanbas/Account/Signin" className="wd-signin-link">Sign in</Link>
     </div>
 );}
-
-//     </div>
-// );}

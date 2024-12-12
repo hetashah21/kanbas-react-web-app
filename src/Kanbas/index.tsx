@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./styles.css";
 import { Routes, Route, Navigate } from "react-router";
 import Account from "./Account";
@@ -12,6 +12,7 @@ import * as courseClient from "./Courses/client";
 import ProtectedRoute from "./Account/ProtectedRoute";
 import Session from "./Account/Session";
 export default function Kanbas() {
+    const dispatch = useDispatch();
     const [courses, setCourses] = useState<any[]>([]);
     const { currentUser } = useSelector((state: any) => state.accountReducer);
     const [enrolling, setEnrolling] = useState<boolean>(false);
@@ -69,7 +70,7 @@ export default function Kanbas() {
     }, [currentUser, enrolling]);
 
     const [course, setCourse] = useState<any>({
-      _id: "1234", name: "New Course", number: "New Number",
+      _id: "0", name: "New Course", number: "New Number",
       startDate: "2023-09-10", endDate: "2023-12-15", description: "New Description",
     });
     const addNewCourse = async() => {

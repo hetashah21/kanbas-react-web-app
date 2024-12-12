@@ -1,43 +1,29 @@
-import React from "react";
-import { FaPlus } from "react-icons/fa6";
-import { MdDoNotDisturbAlt } from "react-icons/md";
-export default function ModulesControls() {
-  return (
-    <div id="wd-modules-controls" className="text-nowrap">
-      <button id="wd-add-module-btn" className="btn btn-lg btn-danger me-1 float-end">
-        <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
-        Module
-      </button>
-      <div className="dropdown d-inline me-1 float-end">
-        <button id="wd-publish-all-btn" className="btn btn-lg btn-secondary dropdown-toggle"
-          type="button" data-bs-toggle="dropdown">
-          Publish All</button>
-        <ul className="dropdown-menu">
-          <li>
-            <a id="wd-publish-all-modules-and-items-btn" className="dropdown-item" href="#">
-              Publish all modules and items</a>
-        </li> 
-        <li>
-            <a id="wd-publish-modules-only-button" className="dropdown-item" href="#">
-              Publish modules only</a>
-        </li>
-        <li>
-            <a id="wd-unpublish-all-modules-and-items" className="dropdown-item" href="#">
-              <MdDoNotDisturbAlt />
-              Unpublish all modules and items</a>
-        </li>
-        <li>
-            <a id="wd-unpublish-modules-only" className="dropdown-item" href="#">
-              <MdDoNotDisturbAlt />
-              Unpublish modules only</a>
-        </li>
-      </ul>
-    </div>
-    <button id="wd-view-progress" className="btn btn-lg btn-secondary me-1 float-end">
-      View Progress
-    </button>
-    <button id="wd-collapse-all" className="btn btn-lg btn-secondary me-1 float-end">
-      Collapse All
-    </button>
-    </div>
-);}
+import {FaPlus} from "react-icons/fa6";
+import {Link} from "react-router-dom";
+
+export default function AssignmentControl({cid}: {cid: string}) {
+    return (
+        <div id="wd-modules-controls" className="text-nowrap">
+            <div className="row">
+                <div className="col-md-6">
+                    <div id="wd-search-assignment">
+                    <input id = "wd-search-assignment-input"
+                                    type="text"
+                                    className="form-control border-start-0"
+                                    placeholder="Search for Assignments"/>
+                    </div>
+                </div>
+                <div className="col-md-6">
+                    <Link id="wd-add-assignment-button" to={`/Kanbas/Courses/${cid}/Assignments/add`} className="btn btn-danger me-1 float-end">
+                        <FaPlus className=" me-1" style={{bottom: "1px"}}/>
+                        Assignment
+                    </Link>
+                    <button id="wd-add-group-button" className="btn btn-light me-1 float-end">
+                        <FaPlus className="me-1" style={{bottom: "1px"}}/>
+                        Group
+                    </button>
+                </div>
+            </div>
+        </div>
+    )
+}

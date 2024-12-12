@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaBell, FaBullhorn, FaChartLine, FaCheckCircle, FaHome } from "react-icons/fa";
 import { LiaFileImportSolid } from "react-icons/lia";
 import { MdDoNotDisturbAlt } from "react-icons/md";
 import { BiImport } from "react-icons/bi";
@@ -42,6 +42,23 @@ export default function CourseStatus() {
         <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
           <IoIosNotificationsOutline className="me-2 fs-5" /> View Course Notifications 
         </button>
+
+        {/* Complete the rest of the buttons */}
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+        <FaHome className="me-2 fs-5" /> Choose Home Page{" "}
+      </button>
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+        <FaBullhorn className="me-2 fs-5" /> New Announcement{" "}
+      </button>
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+        <FaChartLine className="me-2 fs-5" /> New Analytics{" "}
+      </button>
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+        <FaBell className="me-2 fs-5" /> View Course Notifications{" "}
+      </button>
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
+        <FaHome className="me-2 fs-5" /> View Course Stream{" "}
+      </button>
       </div>
   );}
   

@@ -5,6 +5,7 @@ import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
+import AddAssignment from "./Assignments/AddAssignment";
 import PeopleTable from "./People/Table";
 import { FaAlignJustify } from "react-icons/fa";
 export default function Courses({ courses }: { courses: any[]; }) {
@@ -26,6 +27,7 @@ export default function Courses({ courses }: { courses: any[]; }) {
                   <Route path="Modules" element={<Modules/>} />
                   <Route path="Assignments" element={<Assignments/>} />
                   <Route path="Assignments/:aid" element={<AssignmentEditor/>} />
+                  <Route path="Assignments/add" element={<AddAssignment/>}/>
                   <Route path="People" element={<PeopleTable/>} />
                 </Routes>
               </div>

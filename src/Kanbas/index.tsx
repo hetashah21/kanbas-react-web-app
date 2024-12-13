@@ -18,13 +18,12 @@ export default function Kanbas() {
     const [enrolling, setEnrolling] = useState<boolean>(false);
     const findCoursesForUser = async () => {
       try {
-      const courses = await userClient.findCoursesForUser(currentUser._id);
-     setCourses(courses);
-     } catch (error) {
-     console.error(error);
+        const courses = await userClient.findCoursesForUser(currentUser._id);
+        setCourses(courses);
+      } catch (error) {
+        console.error(error);
       }
     };
-
     const updateEnrollment = async (courseId: string, enrolled: boolean) => {
       if (enrolled) {
         await userClient.enrollIntoCourse(currentUser._id, courseId);
@@ -63,12 +62,12 @@ export default function Kanbas() {
    
     useEffect(() => {
       if (enrolling) {
-      fetchCourses();
-       } else {
-      findCoursesForUser();
-        }
+        fetchCourses();
+      } else {
+        findCoursesForUser();
+      }
     }, [currentUser, enrolling]);
-
+  
     const [course, setCourse] = useState<any>({
       _id: "0", name: "New Course", number: "New Number",
       startDate: "2023-09-10", endDate: "2023-12-15", description: "New Description",
@@ -101,7 +100,8 @@ export default function Kanbas() {
                         <Routes>
                             <Route path="/" element={<Navigate to="Account" />} />
                             <Route path="/Account/*" element={<Account />} />
-                            <Route path="/Dashboard" element={ <ProtectedRoute>
+                            <Route path="/Dashboard" element={ 
+                              <ProtectedRoute>
                                 <Dashboard
                                 courses={courses}
                                 course={course}
@@ -109,10 +109,11 @@ export default function Kanbas() {
                                 addNewCourse={addNewCourse}
                                 deleteCourse={deleteCourse}
                                 updateCourse={updateCourse}
-                                enrolling={enrolling}
+                                enrolling={enrolling} 
                                 setEnrolling={setEnrolling}
                                 updateEnrollment={updateEnrollment}
-                                /> </ProtectedRoute>
+                                /> 
+                              </ProtectedRoute>
                             } />
                             <Route path="/Courses/:cid/*" element={<ProtectedRoute><Courses courses={courses}/></ProtectedRoute>} />
                             <Route path="/Calendar" element={<h1>Calendar</h1>} />
@@ -123,8 +124,3 @@ export default function Kanbas() {
         </Session>
     );
 }
-
-function fetchCourses() {
-  throw new Error("Function not implemented.");
-}
-  

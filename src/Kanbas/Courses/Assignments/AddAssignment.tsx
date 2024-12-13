@@ -27,7 +27,7 @@ export default function AddAssignment() {
     };
 
     const createAssignment = async (assignment: any) => {
-        const newAssignment = await client.createAssignment(cid as string, assignment);
+        const newAssignment = await client.createAssignment(assignment);
         dispatch(addAssignment(newAssignment));
         router(`/Kanbas/Courses/${cid}/Assignments`);
     };
